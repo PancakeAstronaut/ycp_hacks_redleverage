@@ -10,10 +10,13 @@ from database import database_query
 class MyClient(discord.Client):
 
     async def show_warning(self, message, strikes):
+        print(strikes)
+        weekly_strikes = strikes['week']
+        monthly_strikes = strikes['month']
         channel = message.channel
         sender = message.author.mention
         warning = "You used banned language, Don't get banned!"
-        await channel.send(sender + " || " + warning)
+        await channel.send(sender + ": " + warning + " & " + "You have {} strikes this week, and {} stikes this month".format(weekly_strikes, monthly_strikes))
 
     async def riddlemethis(self, message):
         channel = message.channel
