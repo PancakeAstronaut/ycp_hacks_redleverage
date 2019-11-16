@@ -28,6 +28,21 @@ class MyClient(discord.Client):
         joke = jokehaus.get_joke()
         await channel.send(joke)
 
+    async def wouldyourather(self, message):
+        channel = message.channel
+        wyr = jokehaus.get_wyr()
+        await channel.send(wyr)
+
+    async def truthbetold(self, message):
+        channel = message.channel
+        truth = jokehaus.get_truth()
+        await channel.send(truth)
+
+    async def doubledogdare(self, message):
+        channel = message.channel
+        dare = jokehaus.get_dare()
+        await channel.send(dare)
+
     async def on_ready(self):
         print('Logged on as {0}!'.format(self.user))
         for guild in client.guilds:
@@ -45,6 +60,12 @@ class MyClient(discord.Client):
             await self.jokehandler(message)
         elif message.content == "!riddle":
             await self.riddlemethis(message)
+        elif message.content == "!wyr":
+            await self.wouldyourather(message)
+        elif message.content == "!truth":
+            await self.truthbetold(message)
+        elif message.content == "!dare":
+            await self.doubledogdare(message)
         elif str("<@645071848874180649>") in message.content:
             var = message.content.split(">")
             if message.author == client.user:
