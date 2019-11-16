@@ -39,7 +39,7 @@ class MyClient(discord.Client):
         sender = message.author.mention
         isbanned_lang = banHammer.ban_tunnel(message.content)
         if isbanned_lang:
-            strikes = database_query.add_strike(client.user.id)
+            strikes = database_query.add_strike(message.author.id)
             await self.show_warning(message, strikes)
         if message.content == "!joke":
             await self.jokehandler(message)
@@ -52,8 +52,8 @@ class MyClient(discord.Client):
             else:
                 message_swap = '{}'.format(var[1])
                 sentiment_polarity = sentiment_analysis.get_sentiment(message_swap)
-                database_query.update_polarity(client.user.id, sentiment_polarity)
-                tone = language_evaluation.get_chat_tone(database_query.get_polarity(client.user.id))
+                database_query.update_polarity(message.author.id, sentiment_polarity)
+                tone = language_evaluation.get_chat_tone(database_query.get_polarity(message.author.id))
                 auto_response = language_evaluation.response_handler(tone)
                 await channel.send(sender + " || " + auto_response)
                 print('Message from {}: {}'.format(message.author, var[1]))
