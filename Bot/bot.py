@@ -3,9 +3,15 @@ from globals import API_INFO
 from language_analysis import language_evaluation
 from language_analysis import sentiment_analysis
 from miniGames import jokehaus
+from language_analysis import banHammer
 
 
 class MyClient(discord.Client):
+
+    async def show_warning(self, message):
+        channel = message.channel
+        warning = "You used banned language, Don't get banned!"
+        await channel.send(warning)
 
     async def riddlemethis(self, message):
         channel = message.channel
@@ -24,6 +30,9 @@ class MyClient(discord.Client):
                 print(f'{self.user} is connected to {guild.name}(id: {guild.id})')
 
     async def on_message(self, message):
+        isbanned_lang = banHammer.ban_tunnel(message.content)
+        if isbanned_lang:
+            await self.show_warning(message)
         if message.content == "!joke":
             await self.jokehandler(message)
         elif message.content == "!riddle":
@@ -39,6 +48,7 @@ class MyClient(discord.Client):
                 print('Message from {0.author}: {0.content}'.format(message))
                 print("Auto Response: {}".format(auto_response))
                 print('Tone was: {} and Sentiment Polarity was: {}'.format(tone, sentiment_polarity))
+                print("-----------------------------------------------------------------------------")
 
 
 client = MyClient()
