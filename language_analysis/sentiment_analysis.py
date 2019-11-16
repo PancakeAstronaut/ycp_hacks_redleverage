@@ -22,6 +22,7 @@ def get_sentiment(input_text):
         sentiment_polarity.append("{:.4f}".format(document.score))  # appending sentiment polarity to new list
 
     polarity = round(float(sentiment_polarity[0]), 4)
+    sentiment_polarity.clear()
     return polarity
 
 
