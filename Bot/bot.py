@@ -1,15 +1,12 @@
 import discord
-
-
-GUILD = "Red Leverage"
-
+from globals import API_INFO
 
 
 class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as {0}!'.format(self.user))
         for guild in client.guilds:
-            if guild.name == GUILD:
+            if guild.name == API_INFO.GUILD:
                 print(f'{self.user} is connected to {guild.name}(id: {guild.id})')
 
     async def on_message(self, message):
@@ -17,4 +14,4 @@ class MyClient(discord.Client):
 
 
 client = MyClient()
-client.run('NjQ1MDcxODQ4ODc0MTgwNjQ5.Xc9lAw.7PW6MIVbTrvUGoKsth9-9ovISw8')
+client.run(API_INFO.TOKEN)
