@@ -16,7 +16,7 @@ class MyClient(discord.Client):
         channel = message.channel
         sender = message.author.mention
         warning = "You used banned language, Don't get banned!"
-        await channel.send(sender + ": " + warning + " & " + "You have {} strikes this week, and {} stikes this month".format(weekly_strikes, monthly_strikes))
+        await channel.send(sender + ": " + warning + " & " + "You have {} strikes this week, and {} strikes this month".format(weekly_strikes, monthly_strikes))
 
     async def riddlemethis(self, message):
         channel = message.channel
