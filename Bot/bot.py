@@ -1,5 +1,7 @@
 import discord
 from globals import API_INFO
+from language_analysis import language_evaluation
+from language_analysis import sentiment_analysis
 
 
 class MyClient(discord.Client):
@@ -10,7 +12,11 @@ class MyClient(discord.Client):
                 print(f'{self.user} is connected to {guild.name}(id: {guild.id})')
 
     async def on_message(self, message):
+        message_swap = '{0.content}'.format(message)
+        sentiment_polarity = sentiment_analysis.get_sentiment(message_swap)
+        tone = language_evaluation.get_chat_tone(sentiment_polarity)
         print('Message from {0.author}: {0.content}'.format(message))
+        print('Tone: {} || Sentiment Polarity: {}'.format(tone, sentiment_polarity))
 
 
 client = MyClient()

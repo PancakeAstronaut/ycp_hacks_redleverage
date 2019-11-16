@@ -1,7 +1,6 @@
 # add API connection packages
 from azure.cognitiveservices.language.textanalytics import TextAnalyticsClient      # Azure API imports
 from msrest.authentication import CognitiveServicesCredentials
-import discord
 
 
 # Azure API information for Text analysis
@@ -12,4 +11,4 @@ azure_text_analytics = TextAnalyticsClient(endpoint=azure_endpoint_url, credenti
 
 # Discord API stuff and globals
 GUILD = "Red Leverage"
-TOKEN = 'NjQ1MDcxODQ4ODc0MTgwNjQ5.Xc9lAw.7PW6MIVbTrvUGoKsth9-9ovISw8'
+TOKEN = 'NjQ1MDcxODQ4ODc0MTgwNjQ5.Xc9nJw.uricwcBlYbR8smGXVHQtMMJnwG4'
