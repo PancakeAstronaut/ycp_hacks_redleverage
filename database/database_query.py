@@ -58,6 +58,3 @@ def add_strike(uid):
     dbconnection.close()
 
     return get_strikes(uid)
-
-
-print(get_strikes("test"))

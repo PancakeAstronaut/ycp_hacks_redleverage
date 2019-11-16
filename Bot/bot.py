@@ -4,11 +4,12 @@ from language_analysis import language_evaluation
 from language_analysis import sentiment_analysis
 from miniGames import jokehaus
 from language_analysis import banHammer
+from database import database_query
 
 
 class MyClient(discord.Client):
 
-    async def show_warning(self, message):
+    async def show_warning(self, message, strikes):
         channel = message.channel
         sender = message.author.mention
         warning = "You used banned language, Don't get banned!"
@@ -35,7 +36,8 @@ class MyClient(discord.Client):
         sender = message.author.mention
         isbanned_lang = banHammer.ban_tunnel(message.content)
         if isbanned_lang:
-            await self.show_warning(message)
+            strikes = database_query.add_strike(client.user.id)
+            await self.show_warning(message, strikes)
         if message.content == "!joke":
             await self.jokehandler(message)
         elif message.content == "!riddle":
@@ -47,7 +49,8 @@ class MyClient(discord.Client):
             else:
                 message_swap = '{}'.format(var[1])
                 sentiment_polarity = sentiment_analysis.get_sentiment(message_swap)
-                tone = language_evaluation.get_chat_tone(sentiment_polarity)
+                database_query.update_polarity(client.user.id, sentiment_polarity)
+                tone = language_evaluation.get_chat_tone(database_query.get_polarity(client.user.id))
                 auto_response = language_evaluation.response_handler(tone)
                 await channel.send(sender + " || " + auto_response)
                 print('Message from {}: {}'.format(message.author, var[1]))
