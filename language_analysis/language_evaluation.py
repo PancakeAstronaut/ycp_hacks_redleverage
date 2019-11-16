@@ -1,6 +1,11 @@
+# search the string for any of the words from json that are banned
 
 
 def arb():
+    print("")
+
+
+def response_handler():
     print("")
 
 
