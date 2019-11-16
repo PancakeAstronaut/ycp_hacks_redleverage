@@ -7,6 +7,11 @@ from miniGames import jokehaus
 
 class MyClient(discord.Client):
 
+    async def riddlemethis(self, message):
+        chennel = message.channel
+        riddle = jokehaus.get_riddle()
+        await chennel.send(riddle)
+
     async def jokehandler(self, message):
         channel = message.channel
         joke = jokehaus.get_joke()
@@ -21,6 +26,8 @@ class MyClient(discord.Client):
     async def on_message(self, message):
         if message.content == "!joke":
             await self.jokehandler(message)
+        elif message.content == "!riddle":
+            await self.riddlemethis(message)
         else:
             if message.author == client.user:
                 pass
