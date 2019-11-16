@@ -1,12 +1,27 @@
 # search the string for any of the words from json that are banned
+import json
+import random
 
 
 def arb():
     print("")
 
 
-def response_handler():
-    print("")
+def response_handler(tone):
+    if tone == "Positive":
+        filepath = '../sys_reqs/positives.json'
+    elif tone == "Negative":
+        filepath = '../sys_reqs/negatives.json'
+    else:
+        filepath = '../sys_reqs/averages.json'
+
+    with open(filepath, 'r') as response:
+        response_list = json.load(response)
+
+        for x in range(1):
+            response_idx = random.randint(1, 20)
+
+    return response_list['responses'][0][str(response_idx)]
 
 
 def get_chat_tone(sentiment_polarity):
