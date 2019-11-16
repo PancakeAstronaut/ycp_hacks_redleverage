@@ -37,6 +37,7 @@ def get_strikes(uid):
 
     return strikes
 
+
 def update_polarity(uid, polarity):
     dbconnection = sqlite3.connect('ChatbotDB.db')
     sqlite_cursor = dbconnection.cursor()
@@ -45,8 +46,6 @@ def update_polarity(uid, polarity):
     dbconnection.commit()
 
     dbconnection.close()
-
-    return get_polarity(uid)
 
 
 def add_strike(uid):
