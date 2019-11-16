@@ -2,7 +2,7 @@ import sqlite3
 
 
 def get_polarity(uid):
-    dbconnection = sqlite3.connect('ChatbotDB.db')
+    dbconnection = sqlite3.connect('../database/ChatbotDB.db')
     sqlite_cursor = dbconnection.cursor()
 
     query = "SELECT SUM(Sentiment), SUM(Counter) FROM PolarityFact WHERE UserID = ?"
@@ -16,7 +16,7 @@ def get_polarity(uid):
 
 
 def get_strikes(uid):
-    dbconnection = sqlite3.connect('ChatbotDB.db')
+    dbconnection = sqlite3.connect('../database/ChatbotDB.db')
     sqlite_cursor = dbconnection.cursor()
 
     week_query = "SELECT SUM(Strike) FROM PolarityFact WHERE LogDate > (SELECT DATETIME('now', '-7 day')) and UserID = ?"
@@ -39,7 +39,7 @@ def get_strikes(uid):
 
 
 def update_polarity(uid, polarity):
-    dbconnection = sqlite3.connect('ChatbotDB.db')
+    dbconnection = sqlite3.connect('../database/ChatbotDB.db')
     sqlite_cursor = dbconnection.cursor()
     in_query = "INSERT INTO PolarityFact (UserID, Sentiment, Counter) VALUES (?, ?, 1)"
     sqlite_cursor.execute(in_query, (uid, polarity))
@@ -49,7 +49,7 @@ def update_polarity(uid, polarity):
 
 
 def add_strike(uid):
-    dbconnection = sqlite3.connect('ChatbotDB.db')
+    dbconnection = sqlite3.connect('../database/ChatbotDB.db')
     sqlite_cursor = dbconnection.cursor()
     in_query = "INSERT INTO PolarityFact (UserID, Strike) VALUES (?, 1)"
     sqlite_cursor.execute(in_query, (uid,))
