@@ -8,9 +8,9 @@ from miniGames import jokehaus
 class MyClient(discord.Client):
 
     async def riddlemethis(self, message):
-        chennel = message.channel
+        channel = message.channel
         riddle = jokehaus.get_riddle()
-        await chennel.send(riddle)
+        await channel.send(riddle)
 
     async def jokehandler(self, message):
         channel = message.channel
@@ -35,7 +35,9 @@ class MyClient(discord.Client):
                 message_swap = '{0.content}'.format(message)
                 sentiment_polarity = sentiment_analysis.get_sentiment(message_swap)
                 tone = language_evaluation.get_chat_tone(sentiment_polarity)
+                auto_response = language_evaluation.response_handler(tone)
                 print('Message from {0.author}: {0.content}'.format(message))
+                print("Auto Response: {}".format(auto_response))
                 print('Tone was: {} and Sentiment Polarity was: {}'.format(tone, sentiment_polarity))
 
 
