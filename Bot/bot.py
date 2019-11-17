@@ -28,10 +28,8 @@ class MyClient(discord.Client):
                              "Their Overall Tone is {}".format(user, round(avg_polarity, 2), current_tone)
             await channel.send(nice_meter)
 
-    async def amazeme(self, message):
+    async def maze(self, message):
         channel = message.channel
-        maze = jokehaus.get_maze()
-        await channel.send(maze)
 
     async def show_warning(self, message, strikes):
         weekly_strikes = strikes['week']
@@ -39,9 +37,7 @@ class MyClient(discord.Client):
         channel = message.channel
         sender = message.author.mention
         warning = "You used banned language, Don't get banned!"
-        await channel.send(
-            sender + ": " + warning + " & " + "You have {} strikes this week, and {} strikes this month".format(
-                weekly_strikes, monthly_strikes))
+        await channel.send(sender + ": " + warning + " & " + "You have {} strikes this week, and {} strikes this month".format(weekly_strikes, monthly_strikes))
 
     async def riddlemethis(self, message):
         channel = message.channel
@@ -125,8 +121,6 @@ class MyClient(discord.Client):
             await self.gettingnerdywithit(message)
         elif message.content == "!help":
             await self.beinghelpful(message)
-        elif message.content == "!maze":
-            await self.amazeme(message)
 
         elif str("<@645071848874180649>") in message.content:
             var = message.content.split(">")

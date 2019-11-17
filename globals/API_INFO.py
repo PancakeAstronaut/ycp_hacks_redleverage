@@ -11,4 +11,4 @@ azure_text_analytics = TextAnalyticsClient(endpoint=azure_endpoint_url, credenti
 
 # Discord API stuff and globals
 GUILD = "Red Leverage"
-TOKEN = 'NjQ1MDcxODQ4ODc0MTgwNjQ5.Xc9nJw.uricwcBlYbR8smGXVHQtMMJnwG4'
+TOKEN = 'NjQ1MDcxODQ4ODc0MTgwNjQ5.Xc-d5Q.sn1IyBvgt2remNqD1SSIzSaYo50'
