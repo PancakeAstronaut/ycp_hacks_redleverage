@@ -1,10 +1,4 @@
 import sqlite3
-from language_analysis import language_evaluation
-
-
-def get_niceness():
-    dbconnection = sqlite3.connect('../database/ChatbotDB.db')
-    sqlite_cursor = dbconnection.cursor()
 
 
 def get_polarity(uid):
@@ -15,7 +9,6 @@ def get_polarity(uid):
     sqlite_cursor.execute(query, (uid,))
     result = sqlite_cursor.fetchall()
     dbconnection.close()
-
     avg_polarity = result[0][0] / result[0][1]
 
     return avg_polarity
