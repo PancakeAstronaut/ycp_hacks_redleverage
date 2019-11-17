@@ -3,9 +3,13 @@ import random
 import discord
 
 
+import Bot
+
 
 def arb():
     print("")
+
+
 
 
 def get_riddle():
@@ -64,11 +68,11 @@ def roll():
     diceroll = random.randint(mins, maxs)
     return diceroll
 
+def get_maze():
+    get_mazeintro()
+    return
 
 def get_mazeintro():
-
-    #client = discord.Client()
-
     with open('../sys_reqs/maze.json', 'r') as infile:
         intros = json.load(infile)
 
@@ -98,20 +102,26 @@ def get_mazeintro():
         mintro.append(intro_path1)
         mintro.append(intro_path2)
 
-    global intro_title, intro_story, intro_option1, intro_option2
+    # global intro_title, intro_story, intro_option1, intro_option2
+    #
+    # embed = discord.Embed(
+    #     title="Maze!", colour=discord.Colour.dark_green()
+    # )
+    # embed.add_field(name=intro_title, value=intro_story)
+    # embed.add_field(name=" ", value=intro_option1)
+    # embed.add_field(name=" ", value=intro_option2)
 
-    embed = discord.Embed(
-        title="Maze!", colour=discord.Colour.dark_green()
-    )
-    embed.add_field(name=intro_title, value=intro_story)
-    embed.add_field(name=" ", value=intro_option1)
-    embed.add_field(name=" ", value=intro_option2)
+    mazeintro = "Title:" + mintro[0] + '\n' + "Story: " + mintro[1] + "Options" + "\n\n" + mintro[2] + "     " + mintro[3]
 
+    chanel = message.channel
 
+        #  if discord.message.content == "!Left":
+        #     MyClient.message.channel.send(mintro[5])
+        #     get_hr1()
+        # else:
+        #     discord.channel.send("You hear a boulder")
 
-
-    # print(mintro)
-    return mintro
+    return mazeintro
 
 
 def get_hr1():
