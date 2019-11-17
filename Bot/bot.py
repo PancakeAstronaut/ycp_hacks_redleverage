@@ -67,7 +67,7 @@ class MyClient(discord.Client):
     async def gettingnerdywithit(self, message):
         channel = message.channel
         dice = jokehaus.roll()
-        await channel.send(dice)
+        await channel.send("Dice Roll Value: " + str(dice))
 
     async def beinghelpful(self, message):
         channel = message.channel
@@ -122,7 +122,6 @@ class MyClient(discord.Client):
             await self.gettingnerdywithit(message)
         elif message.content == "!help":
             await self.beinghelpful(message)
-
         elif str("<@645071848874180649>") in message.content:
             var = message.content.split(">")
             if message.author == client.user:
