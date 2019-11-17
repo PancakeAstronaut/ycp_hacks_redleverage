@@ -102,7 +102,7 @@ def get_mazeintro():
         mintro.append(intro_path1)
         mintro.append(intro_path2)
 
-    global intro_title, intro_story, intro_option1, intro_option2
+    # global intro_title, intro_story, intro_option1, intro_option2
 
     embed = discord.Embed(
         title="Maze!", colour=discord.Colour.dark_green()
