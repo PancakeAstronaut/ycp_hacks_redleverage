@@ -83,6 +83,7 @@ class MyClient(discord.Client):
         embed.add_field(name="!dare", value="displays a dare", inline=False)
         embed.add_field(name="!roll", value="displays a dice roll on a d20", inline=False)
         embed.add_field(name="!maze", value="displays a mini adventure ", inline=False)
+        embed.add_field(name="!nm", value="shows nice meter for mentioned users", inline=False)
         await channel.send(content=None, embed=embed)
 
     async def on_ready(self):
