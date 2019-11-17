@@ -28,6 +28,15 @@ class MyClient(discord.Client):
                              "Their Overall Tone is {}".format(user, round(avg_polarity, 2), current_tone)
             await channel.send(nice_meter)
 
+
+
+    async def maze(self, message):
+        channel = message.channel
+
+
+
+
+
     async def show_warning(self, message, strikes):
         weekly_strikes = strikes['week']
         monthly_strikes = strikes['month']
@@ -61,6 +70,27 @@ class MyClient(discord.Client):
         dare = jokehaus.get_dare()
         await channel.send(dare)
 
+    async def gettingnerdywithit(self, message):
+        channel = message.channel
+        dice = jokehaus.roll()
+        await channel.send(dice)
+
+    async def beinghelpful(self, message):
+        channel = message.channel
+        embed = discord.Embed(
+            title="Commands List!",
+            description="Here are a list of all the commands for Red Leverage",
+            colour=discord.Colour.green()
+        )
+        embed.add_field(name="!riddle", value="displays a riddle", inline=False)
+        embed.add_field(name="!joke", value="displays a joke, more than likely a dad joke", inline=False)
+        embed.add_field(name="!wyr", value="displays a would you rather question", inline=False)
+        embed.add_field(name="!truth", value="displays a truth questions", inline=False)
+        embed.add_field(name="!dare", value="displays a dare", inline=False)
+        embed.add_field(name="!roll", value="displays a dice roll on a d20", inline=False)
+        embed.add_field(name="!maze", value="displays a mini adventure ", inline=False)
+        await channel.send(content=None, embed=embed)
+
     async def on_ready(self):
         print('Logged on as {0}!'.format(self.user))
         for guild in client.guilds:
@@ -93,6 +123,11 @@ class MyClient(discord.Client):
             await self.truthbetold(message)
         elif message.content == "!dare":
             await self.doubledogdare(message)
+        elif message.content == "!roll":
+            await self.gettingnerdywithit(message)
+        elif message.content == "!help":
+            await self.beinghelpful(message)
+
         elif str("<@645071848874180649>") in message.content:
             var = message.content.split(">")
             if message.author == client.user:

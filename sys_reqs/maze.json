@@ -1,0 +1,139 @@
+{
+  "intro": [{
+    "title": "Welcome to the maze",
+    "story":
+       "You wake up cold, disoriented and trapped. You look behind you and see nothing but a blank wall In front of you there are 2 path ways one going left and one going right Which path will you take? !Left for the left path or !Right for the right path",
+    "option1": "You have chosen to go down the Left path.",
+    "path1": "hl1",
+    "option2": "You have chosen to go down the Right path.",
+    "path2": "hr1"
+      }],
+
+  "hr1": [{
+    "title": "Right Path 1",
+    "story":
+      "You meander down the hallway to your right not noticing anything You feel a slight chill as you notice you have no shoes on You notice that there is only one path up ahead to your left.Do you take it? !Left to go down the path or !Stay to stay where you are",
+    "option1": "You have chosen to go down the Left path",
+    "path1": "hl2",
+    "option2": "You have chosen to stay.",
+    "path2": "stay"
+  }],
+
+
+  "hl2": [{
+    "title": "Left Path 2",
+    "story": "You meander down the only turn you could make. The floor is getting slightly warmer You notice that once again there is only one path up ahead to your left.Will you take it? !Left to go down the path or !Stay to stay where you are",
+    "option1": "You have chosen to go down the Left path",
+    "path2": "hl3",
+    "option2": "You have chosen to stay.",
+    "path2": "stay"
+  }],
+
+
+  "hl3": [{
+    "title": "Left Path 3",
+    "story": "You continue to follow the walls as you go You look around and see that you are in some kind of castle You stop at the intersection. You can either continue straight or make another left Will you take it? !Left to go down the path or !Straight to forage ahead ",
+    "option1": "You have chosen to go down the Left path",
+    "path1": "hl4",
+    "option2": "You have chosen to go straight.",
+    "path2": "hs1"
+  }],
+
+
+  "hl4": [{
+    "title": "Left Path 4",
+    "story": "You make the left and hope that you didn't run yourself in a circle This hallway looks slightly shorter and you see the soft glow from a torch You notice that once again there is only one path but this time making a right.Is this your path? !Right to go down the path or !Stay to stay where you are",
+    "option1": "You have chosen to go down the Right path",
+    "path1": "hr2",
+    "option2": "You have chosen to stay.",
+    "path2": "stay"
+  }],
+
+
+  "hr2": [{
+    "title": "Right Path 2",
+    "story": "Aha! A right turn! The burst of hope helps you speed up in your journey out of this place You notice that there is only one path up ahead to your right and consider your options. Will you take it? !Right to go down the path or !Stay to stay where you are",
+    "option1":"You have chosen to go down the Right path",
+    "path1": "hr3",
+    "option2": "You have chosen to stay.",
+    "path2": "stay"
+  }],
+
+
+  "hr3": [{
+    "title": "Right Path 3",
+    "story": "Another right turn has lead you to an even bigger propsition. You see a fork up ahead a crossroads if you will. You see that you can either go right left or straight ahead. Which way will you choose? !Right for the right path !Left for the left path !Straight  ",
+    "option1": "You have chosen to go down the left path",
+    "path1": "hl5",
+    "option2": "You have chosen to straight.",
+    "path2": "hs2",
+    "option3": "You have chosen to right .",
+    "path3": "hr4"
+  }],
+
+
+  "hl5": [{
+    "title": "Left Path 5",
+    "story": "Back to the lefts again You just accept it as your body begins to warm up and you can see a little bit better You notice that there is only one path up ahead to your right and consider your options Will you take it? !Right to go down the path or !Stay to stay where you are",
+    "option1": "You have chosen to go down the Right path",
+    "path1": "hr5",
+    "option2": "You have chosen to stay.",
+    "path2": "stay"
+  }],
+
+
+  "hr5":[{
+    "title": "Right Path 5",
+    "story": "To the right to the right to the right to the right You start to feel the warmth of the outside You notice that there is only one path up ahead to your left and consider pushing ahead. Will you take it? !Left to go down the path or !Stay to stay where you are",
+    "option1": "You have chosen to go down the Left path",
+    "path1": "hl6",
+    "option2": "You have chosen to stay.",
+    "path2": "stay"
+  }],
+
+
+  "hl6": [{
+    "title": "Left Path 6",
+    "story": "Left is my best side You hear angelic music start to get louder. That is a little suspect but you notice that theres only one way again. Will you take it? !Right to go down the path or !Stay to stay where you are",
+    "option1": "You have chosen to go down the Right path",
+    "path1": "hr5",
+    "option2": "You have chosen to stay.",
+    "path2": "stay"
+  }],
+
+  "hr6": [{
+    "title": "Right Path 6",
+    "story": "making my way down town walking fast... You jam out to the music as you continue walking You notice that there is only one path up ahead to your left  and try to follow the sound of the music. Does it speak to you? !Left to go down the path or !Stay to stay where you are",
+    "option1": "You have chosen to go down the left  path",
+    "path1": "hl7",
+    "option2": "You have chosen to stay.",
+    "path2": "stay"
+  }],
+
+
+  "hl7": [{
+    "title": "Left Path 7",
+    "story":"Run dun dun dun dun dun dun dun dun dun dun dun. Ominous change in music but youre here for it. There are two paths ahead of you one to the right and one to the left which will you take? !Right or !Left.",
+    "option1": "You have chosen to go down the Right path",
+    "path1": "hr7",
+    "option2": "You have chosen to go down the Left path.",
+    "path2": "hl8"
+  }],
+
+
+  "hl8": [{
+    "title": "Left Path 5",
+    "story": "Back to the lefts again. You make an immediate right and you see the door You can hear the angels calling. Will you open the door? !door to open the door !stay to stay where you are",
+    "option1":  "You have chosen to open the door",
+    "path1": "door",
+    "option2": "You have chosen to stay.",
+    "path2": "stay"
+  }],
+
+
+  "door":[ {
+    "title": "This is the end ",
+    "story": "You open the door You see your shoes, your hat and whats left of your dignity You look back and see you were in your garage all along. Thank you for playing along ",
+    "option": []
+  }]
+}
