@@ -30,6 +30,8 @@ class MyClient(discord.Client):
 
     async def maze(self, message):
         channel = message.channel
+        await channel.send(message.author.mention + ":\nBlind Maze: \nYou approach a fork in the road....\nThe left is an open clearing and the"
+                           "right is a dense forest.\nDo you go 'right' or 'left'?")
 
     async def show_warning(self, message, strikes):
         weekly_strikes = strikes['week']
@@ -122,6 +124,8 @@ class MyClient(discord.Client):
             await self.gettingnerdywithit(message)
         elif message.content == "!help":
             await self.beinghelpful(message)
+        elif message.content == "!maze":
+            await self.maze(message)
         elif str("<@645071848874180649>") in message.content:
             var = message.content.split(">")
             if message.author == client.user:
