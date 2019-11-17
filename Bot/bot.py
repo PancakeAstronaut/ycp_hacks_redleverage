@@ -9,8 +9,10 @@ from database import database_query
 
 class MyClient(discord.Client):
 
+    async def nice_meter(self):
+        print("Code goes here")
+
     async def show_warning(self, message, strikes):
-        print(strikes)
         weekly_strikes = strikes['week']
         monthly_strikes = strikes['month']
         channel = message.channel
@@ -66,6 +68,8 @@ class MyClient(discord.Client):
             await self.truthbetold(message)
         elif message.content == "!dare":
             await self.doubledogdare(message)
+        elif message.content == "!nm":
+            await self.nice_meter()
         elif str("<@645071848874180649>") in message.content:
             var = message.content.split(">")
             if message.author == client.user:
@@ -77,6 +81,7 @@ class MyClient(discord.Client):
                 tone = language_evaluation.get_chat_tone(database_query.get_polarity(message.author.id))
                 auto_response = language_evaluation.response_handler(tone)
                 await channel.send(sender + " || " + auto_response)
+                # For Debugging only, Code Goes above
                 print('Message from {}: {}'.format(message.author, var[1]))
                 print("Auto Response: {}".format(auto_response))
                 print('Tone was: {} and Sentiment Polarity was: {}'.format(tone, sentiment_polarity))
